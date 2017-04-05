@@ -15,11 +15,7 @@ var pBox = document.createElement("div");
 var letterBox = document.createElement("div");
 
 
-
-
 function getEasyWord() {
-
-
   Button.classList.add('hide');
   Loader.classList.remove('hide');
   Loader.classList.add('show');
@@ -28,7 +24,6 @@ function getEasyWord() {
 }
 
 function getMediumWord() {
-
   Button.classList.add('hide');
   Loader.classList.remove('hide');
   Loader.classList.add('show');
@@ -37,7 +32,6 @@ function getMediumWord() {
 }
 
 function getHardWord() {
-
   Button.classList.add('hide');
   Loader.classList.remove('hide');
   Loader.classList.add('show');
@@ -49,18 +43,13 @@ function ajaxCall() {
     var xhttp = new XMLHttpRequest();
 
     xhttp.open("GET", urlE, true);
-
     xhttp.onreadystatechange = function () {
-
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
-            console.log("response: ", response);
-
             Main.classList.add('hide');
             makeWordArr(response);
         }
     };
-
     xhttp.send();
 }
 
@@ -69,19 +58,13 @@ function makeWordArr(response) {
   var randomWord = response.word;
   randomWord = randomWord.toLowerCase();
   
-
-
   // pushed letters into array for checking
   wordArr = randomWord.split("");
-  
   
   //make lettters for user to choose
   makeAlphabetBoxes();
   //takes word and splits letters to create spaces on the page
   makeSpaces(randomWord);
-  
-  console.log("word arr: ", wordArr);
-  console.log("word: ", randomWord);
 }
 
 function makeAlphabetBoxes() {
@@ -101,8 +84,8 @@ function makeAlphabetBoxes() {
 function makeSpaces(word) {
   GameBox.appendChild(pBox);
   var center = document.createAttribute("class");
-    center.value = "center";
-    pBox.setAttributeNode(center);
+  center.value = "center";
+  pBox.setAttributeNode(center);
   
   for (var i = 0; i < word.length; i++){
     var space = document.createElement("p");
@@ -110,14 +93,11 @@ function makeSpaces(word) {
     space.classList.add(i);
     pBox.appendChild(space);   
   }
-
-  console.log('body: ', document.body.childNodes);
 }
 
 function keyPress(event) {
   var letterText = this.innerHTML;
   this.classList.add('playing');  
-  console.log('outer count: ', count);
   
   for (var i = 0; i < wordArr.length; i++){
     if(wordArr[i] === letterText) {
@@ -127,12 +107,8 @@ function keyPress(event) {
       this.classList.add('disabled');
       this.classList.remove('playing');
       wordArr[i] = '';
-      console.log('word arr: ', wordArr);
       count = count + 1;
-      console.log('count: ', count);
-
       winner();
-
       continue;  
     } 
   }
@@ -158,24 +134,23 @@ function winner() {
 function removeTransition(event){
     if(event.propertyName !== 'transform') return; //skip if not a transform
     this.classList.remove('playing');
-    console.log(this);
 };
 
 function reset() {
-var div1 = GameBox.children[0];
-var div2 = GameBox.children[1];
+  var div1 = GameBox.children[0];
+  var div2 = GameBox.children[1];
 
-    while (div1.firstChild) {
-        div1.removeChild(div1.firstChild);
-    }
-    while (div2.firstChild) {
-        div2.removeChild(div2.firstChild);
-    }
-   
-    Main.classList.remove('hide');
-    Button.classList.remove('hide');
-    Loader.classList.remove('show');
-    Loader.classList.add('hide');
-    count = 0;
-    wordArr = null;
+  while (div1.firstChild) {
+    div1.removeChild(div1.firstChild);
+  }
+  while (div2.firstChild) {
+    div2.removeChild(div2.firstChild);
+  }
+
+  Main.classList.remove('hide');
+  Button.classList.remove('hide');
+  Loader.classList.remove('show');
+  Loader.classList.add('hide');
+  count = 0;
+  wordArr = null;
 }
