@@ -1,6 +1,6 @@
-var urlE = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=4&maxLength=5&api_key=ead8ece506050958a8003042c2203b6102e947425cb408d67';
-var urlM = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=8&api_key=ead8ece506050958a8003042c2203b6102e947425cb408d67';
-var urlH = 'https://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=9&maxLength=10&api_key=ead8ece506050958a8003042c2203b6102e947425cb408d67';
+var urlE = 'https://api.wordnik.com:443/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=4&maxLength=5&api_key=ead8ece506050958a8003042c2203b6102e947425cb408d67';
+var urlM = 'https://api.wordnik.com:443/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=8&api_key=ead8ece506050958a8003042c2203b6102e947425cb408d67';
+var urlH = 'https://api.wordnik.com:443/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=9&maxLength=10&api_key=ead8ece506050958a8003042c2203b6102e947425cb408d67';
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n', 'o','p','q','r','s','t','u','v','w','x','y','z'];
 var wordArr;
 var randomWord;
